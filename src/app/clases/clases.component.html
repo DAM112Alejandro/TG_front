@@ -1,0 +1,93 @@
+<div class="classes-container">
+    <h2>Nuestras Clases</h2>
+  
+    <div class="classes-grid">
+      <mat-card *ngFor="let clase of clases" class="class-card">
+        <mat-card-header>
+          <mat-card-title>{{ clase.nombre }}</mat-card-title>
+          <mat-card-subtitle>{{ clase.horario }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="clase.imagen" alt="{{ clase.nombre }}">
+        <mat-card-content>
+          <p>{{ clase.descripcion }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button color="primary">Reservar</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Horario del Gimnasio</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <table mat-table [dataSource]="transformedHorario" class="mat-elevation-z8">
+        
+        <!-- Columna Hora -->
+        <ng-container matColumnDef="hora">
+          <th mat-header-cell *matHeaderCellDef> Hora </th>
+          <td mat-cell *matCellDef="let element"> {{element.hora}} </td>
+        </ng-container>
+  
+        <!-- Columna Lunes -->
+        <ng-container matColumnDef="lunes">
+          <th mat-header-cell *matHeaderCellDef> Lunes </th>
+          <td mat-cell *matCellDef="let element">
+            <div *ngIf="element.lunes">
+              {{ element.lunes }}
+            </div>
+          </td>
+        </ng-container>
+  
+        <!-- Columna Martes -->
+        <ng-container matColumnDef="martes">
+          <th mat-header-cell *matHeaderCellDef> Martes </th>
+          <td mat-cell *matCellDef="let element">
+            <div *ngIf="element.martes">
+              {{ element.martes }}
+            </div>
+          </td>
+        </ng-container>
+  
+        <!-- Columna Miércoles -->
+        <ng-container matColumnDef="miercoles">
+          <th mat-header-cell *matHeaderCellDef> Miércoles </th>
+          <td mat-cell *matCellDef="let element">
+            <div *ngIf="element.miercoles">
+              {{ element.miercoles }}
+            </div>
+          </td>
+        </ng-container>
+  
+        <!-- Columna Jueves -->
+        <ng-container matColumnDef="jueves">
+          <th mat-header-cell *matHeaderCellDef> Jueves </th>
+          <td mat-cell *matCellDef="let element">
+            <div *ngIf="element.jueves">
+              {{ element.jueves }}
+            </div>
+          </td>
+        </ng-container>
+  
+        <!-- Columna Viernes -->
+        <ng-container matColumnDef="viernes">
+          <th mat-header-cell *matHeaderCellDef> Viernes </th>
+          <td mat-cell *matCellDef="let element">
+            <div *ngIf="element.viernes">
+              {{ element.viernes }}
+            </div>
+          </td>
+        </ng-container>
+  
+        <!-- Fila de encabezado -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  
+        <!-- Fila de datos -->
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </mat-card-content>
+  </mat-card>
+  
+  

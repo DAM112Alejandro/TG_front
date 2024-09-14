@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>Editar Usuario</h1>
+<div mat-dialog-content>
+  <form [formGroup]="usuarioForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="nombre" />
+      <mat-error *ngIf="usuarioForm.get('nombre')?.hasError('required')">Nombre es requerido</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" />
+      <mat-error *ngIf="usuarioForm.get('email')?.hasError('email')">Email inválido</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Teléfono</mat-label>
+      <input matInput formControlName="telefono" />
+      <mat-error *ngIf="usuarioForm.get('telefono')?.hasError('required')">Teléfono es requerido</mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="close()">Cancelar</button>
+  <button mat-button color="primary" (click)="save()">Guardar</button>
+</div>
+

@@ -1,0 +1,42 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  background-size: cover; 
+}
+
+.hero-card {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+
+mat-card-header {
+  background: transparent;
+  padding: 10px;
+}
+
+mat-card-title {
+  font-size: 2rem;
+}
+
+mat-card-content {
+  padding: 20px;
+}
+
+button {
+  margin-top: 20px;
+}
+
+.hero-text {
+  font-size: 1.2rem;
+  margin: 20px 0;
+}
